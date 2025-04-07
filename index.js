@@ -8,6 +8,24 @@ let gameStarted = false
 let cardsEl = document.getElementById("cards-El")
 let sumEl = document.getElementById("sum-El")
 let textEl = document.getElementById("text-El")
+let playerInfoEl = document.getElementById("playerInfo")
+
+// function playerInfo(){
+// let player = {
+//     name: prompt("Your name: "),
+//     chips: prompt("How many chips would you like to buy? ")
+//     }
+
+//     while(isNaN(player.chips)){
+//         alert("not a number")
+//         player.chips = prompt("How many chips would you like to buy? ")
+//     }
+
+//     playerInfoEl.innerHTML = "Player: " + player.name + '<br />' + "Chips: €" + player.chips 
+// }   
+// playerInfo()
+
+document.getElementById("drawCard").disabled = true
 
 function gameCheck(){
     if(gameStarted = true){
@@ -20,7 +38,9 @@ function gameCheck(){
 function stopGame(){
     if(sum >= 21){
         document.getElementById("drawCard").disabled = true
-    } else document.getElementById("drawCard").disabled = false
+    }else if(gameStarted = true){        
+        document.getElementById("drawCard").disabled = false
+    }
 }
 
 function randomCard(){
